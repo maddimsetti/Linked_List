@@ -73,6 +73,21 @@ public class MyLinkedList<K> {
     }
 
     /**
+     * @description create Method for Deleting the LastElement in Linked List
+     * param: First Creating the Sequence and then Traverse the list and Delete the Last Element in List
+     *        Using pop method
+     */
+    public INode popLast() {
+        INode tempNode = head;
+        while (!tempNode.getNext().equals(tail)) {
+            tempNode = tempNode.getNext();
+        }
+        this.tail = tempNode;
+        tempNode.setNext(null);
+        return tempNode;
+    }
+
+    /**
      * @description create Method for Printing the Linked List
      *
      */
