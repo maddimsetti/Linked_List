@@ -23,4 +23,23 @@ public class MyLinkedListTest {
                          mySecondNode.getNext().equals(myThirdNode);
         Assertions.assertTrue(result);                                //Testing for Creation of LinkedList
     }
+    /**
+     * @description create Method for Testing the Linked List Creation
+     *
+     */
+    @Test
+    public void given3NumbersWhenAddedToLinkedListShouldBeAddedAtTop () {
+        MyNode<Integer> myFirstNode = new MyNode<>(56);             //Creating object for Passing Nodes
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+        MyLinkedList mylinkedlist = new MyLinkedList();
+        mylinkedlist.add(myThirdNode);     //Adding ThirdNode first to list
+        mylinkedlist.add(mySecondNode);    //Adding SecondNode before the ThirdNode to list
+        mylinkedlist.add(myFirstNode);     //Adding FirstNode before the SecondNode to list
+        mylinkedlist.printMyNode();        //Printing the List
+        boolean result = mylinkedlist.head.equals(myFirstNode) &&
+                         mylinkedlist.head.getNext().equals(mySecondNode) &&
+                         mylinkedlist.tail.equals(myThirdNode);
+        Assertions.assertTrue(result);        //Testing the Adding Node Sequence
+    }
 }

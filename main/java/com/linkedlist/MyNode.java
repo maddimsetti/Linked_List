@@ -4,27 +4,44 @@ package com.linkedlist;
  * @description create SubClass for Defining the Variables
  *
  */
-public class MyNode<K> {
+public class MyNode<K> implements INode<K> {
     //variables
     private K key;
-    private MyNode next;
+    private INode next;
 
     /**
      * @description create Constructor for Initializing Objects
      *
      */
     public MyNode(K key) {
-        this.key = null;
+        this.key = key;
         this.next = null;
     }
+
     /**
      * @description Creating Getter and setter method
      *
      */
-    public MyNode getNext() {
+    public K getKey() {
+        return key;
+    }
+    public void setKey(K key) {
+        this.key = key;
+    }
+    public void getKey(K key) {
+        this.key = null;
+        this.next = null;
+    }
+
+    /**
+     * @description Creating Getter and setter method from INode
+     *
+     */
+    public INode getNext() {
         return next;
     }
-    public void setNext(MyNode next) {
-        this.next = next;
+    @Override
+    public void setNext(INode next) {
+        this.next = (MyNode<K>)next;
     }
 }
