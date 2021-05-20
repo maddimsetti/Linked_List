@@ -86,4 +86,25 @@ public class MyLinkedListTest {
                          mylinkedlist.tail.equals(myThirdNode);
         Assertions.assertTrue(result);        //Testing the Inserting Node Sequence
     }
+
+    /**
+     * @description create Method for Testing the Linked List After Inserting the SecondNode Between The list
+     *
+     */
+    @Test
+    public void given3NumbersWhenDeletingFirstElementShouldPassLinkedListResult () {
+        MyNode<Integer> myFirstNode = new MyNode<>(56);             //Creating object for Passing Nodes
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+        MyLinkedList mylinkedlist = new MyLinkedList();
+        mylinkedlist.add(myFirstNode);        //Adding FirstNode first to list
+        mylinkedlist.append(myThirdNode);     //Appending ThirdNode last to list
+        mylinkedlist.insert(myFirstNode,mySecondNode); //Inserting the SecondNode InBetween them
+        mylinkedlist.pop();                    //Deleting the First Element in the List
+        System.out.println("After Deleting FirstNodes with Data, The LinkedList Sequence");
+        mylinkedlist.printMyNode();        //Printing the List
+        boolean result = mylinkedlist.head.equals(mySecondNode) &&
+                         mylinkedlist.tail.equals(myThirdNode);
+        Assertions.assertTrue(result);        //Testing the Deleting FirstNode Sequence
+    }
 }

@@ -63,6 +63,16 @@ public class MyLinkedList<K> {
     }
 
     /**
+     * @description create Method for Deleting the FirstElement in Linked List
+     * param: First Creating the Sequence and then Delete the First Element in List Using pop method
+     */
+    public INode pop () {
+        INode tempNode = this.head;
+        this.head = head.getNext();
+        return tempNode;
+    }
+
+    /**
      * @description create Method for Printing the Linked List
      *
      */
