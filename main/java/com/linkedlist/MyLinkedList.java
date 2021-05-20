@@ -36,6 +36,21 @@ public class MyLinkedList<K> {
     }
 
     /**
+     * @description create Method for Appending the Nodes to List
+     * param: Here Head Created first and then append the tail to head and create the list
+     *
+     */
+    public void append (INode myNode) {
+        if (this.head == null) {
+            this.head = myNode;
+        }
+        if (this.tail != null) {
+            this.tail.setNext(myNode);
+        }
+        this.tail = myNode;
+    }
+
+    /**
      * @description create Method for Printing the Linked List
      *
      */
