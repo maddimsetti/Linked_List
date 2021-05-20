@@ -88,6 +88,21 @@ public class MyLinkedList<K> {
     }
 
     /**
+     * @description create Method for Searching the Element in Linked List
+     * param: First Creating the Sequence and then by Traversing the list search the Element in List
+     */
+    public boolean search (INode key) {
+        INode tempNode = head;
+        while(tempNode != null && tempNode.getNext() != null) {
+            if (tempNode.getKey().equals(key.getKey())) {
+                return true;
+            }
+            tempNode = tempNode.getNext();
+        }
+        return false;
+    }
+
+    /**
      * @description create Method for Printing the Linked List
      *
      */

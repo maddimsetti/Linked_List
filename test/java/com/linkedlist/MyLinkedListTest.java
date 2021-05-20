@@ -128,4 +128,24 @@ public class MyLinkedListTest {
                          mylinkedlist.tail.equals(mySecondNode);
         Assertions.assertTrue(result);        //Testing the Deleting LastNode Sequence
     }
+
+    /**
+     * @description create Method for Testing the Linked List After Searching the Element in the list
+     * param: If search the Element found the result will be True, else the result will be false
+     *
+     */
+    @Test
+    public void given3NumbersWhenSearchingTheElementShouldPassLinkedListResult () {
+        MyNode<Integer> myFirstNode = new MyNode<>(56);             //Creating object for Passing Nodes
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+        MyLinkedList mylinkedlist = new MyLinkedList();
+        mylinkedlist.add(myFirstNode);        //Adding FirstNode first to list
+        mylinkedlist.append(myThirdNode);     //Appending ThirdNode last to list
+        mylinkedlist.insert(myFirstNode,mySecondNode); //Inserting the SecondNode InBetween them
+        mylinkedlist.printMyNode();        //Printing the List
+        boolean result = mylinkedlist.search(mySecondNode);                    //Searching the Last Element in the List
+        System.out.println("Searching the Nodes with Data 30, the element found: "+result);
+        Assertions.assertTrue(result);        //Testing for Searching Element
+    }
 }
