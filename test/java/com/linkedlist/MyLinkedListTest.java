@@ -148,4 +148,30 @@ public class MyLinkedListTest {
         System.out.println("Searching the Nodes with Data 30, the element found: "+result);
         Assertions.assertTrue(result);        //Testing for Searching Element
     }
+    /**
+     * @description create Method for Testing the Linked List By searching the Element and Inserting the New Element in the List
+     *
+     */
+    @Test
+    public void given3NumbersWhenSearchingTheElementAndThenInsertAfterThatElementShouldPassLinkedListResult () {
+        MyNode<Integer> myFirstNode = new MyNode<>(56);             //Creating object for Passing Nodes
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+        MyNode<Integer> myFourthNode = new MyNode<>(40);
+        MyLinkedList mylinkedlist = new MyLinkedList();
+        mylinkedlist.add(myFirstNode);        //Adding FirstNode first to list
+        mylinkedlist.append(mySecondNode);    //Appending SecondNode to list
+        mylinkedlist.append(myThirdNode);     //Appending ThirdNode last to list
+        mylinkedlist.search(mySecondNode);    //Searching The SecondNode in the List
+        boolean result = mylinkedlist.search(mySecondNode);                    //Searching the SecondNode Element in the List
+        Assertions.assertTrue(result);
+        mylinkedlist.insert(mySecondNode,myFourthNode);  //Insert the FourthNode In Between The SecondNode and ThirdNode
+        System.out.println("After Inserting FourthNode between them with Data, The LinkedList Sequence");
+        mylinkedlist.printMyNode();        //Printing the List
+        boolean result1 = mylinkedlist.head.equals(myFirstNode) &&
+                         mylinkedlist.head.getNext().equals(mySecondNode) &&
+                         mylinkedlist.head.getNext().getNext().equals(myFourthNode) &&
+                         mylinkedlist.tail.equals(myThirdNode);
+        Assertions.assertTrue(result1);        //Testing the Searching & Inserting Node Sequence
+    }
 }
