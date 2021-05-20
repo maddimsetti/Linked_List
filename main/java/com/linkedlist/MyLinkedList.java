@@ -51,6 +51,18 @@ public class MyLinkedList<K> {
     }
 
     /**
+     * @description create Method for Inserting the Nodes InBetween the List
+     * param: Here FirstNode Created first and then append the ThirdNode and then Insert the SecondNode
+     *        In between FirstNode and ThirdNode and create the list
+     *
+     */
+    public void insert(INode myNode, INode newNode) {
+        INode tempNode = myNode.getNext();
+        myNode.setNext(newNode);
+        newNode.setNext(tempNode);
+    }
+
+    /**
      * @description create Method for Printing the Linked List
      *
      */
