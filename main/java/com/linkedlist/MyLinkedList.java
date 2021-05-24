@@ -91,15 +91,44 @@ public class MyLinkedList<K> {
      * @description create Method for Searching the Element in Linked List
      * param: First Creating the Sequence and then by Traversing the list search the Element in List
      */
-    public boolean search (INode key) {
+    public boolean search (INode myNode) {
         INode tempNode = head;
         while(tempNode != null && tempNode.getNext() != null) {
-            if (tempNode.getKey().equals(key.getKey())) {
+            if (tempNode.getKey().equals(myNode.getKey())) {
                 return true;
             }
             tempNode = tempNode.getNext();
         }
         return false;
+    }
+
+    /**
+     * @description create Method for Deleting the LastElement in Linked List
+     * param: First Creating the Sequence and then Traverse the list and Delete the Element what we want in the List
+     *        Using pop method
+     */
+    public void popNode(INode myNode) {
+        INode tempNode = head;
+        INode previousNode = null;
+        while ( tempNode != null && tempNode.getKey() != myNode.getKey() ) {
+            previousNode = tempNode;
+            tempNode = tempNode.getNext();
+        }
+        previousNode.setNext(tempNode.getNext());
+    }
+
+    /**
+     * @description create Method for Finding the Size of the Elements in Linked List
+     * param: First Creating the Sequence and then by Traversing the list to count the Element in List
+     */
+    public int size() {
+        int count = 0;
+        INode tempNode = head;
+        while(tempNode != null) {
+            count++;               //counting the Elements
+            tempNode = tempNode.getNext();
+        }
+        return count;
     }
 
     /**

@@ -174,4 +174,31 @@ public class MyLinkedListTest {
                          mylinkedlist.tail.equals(myThirdNode);
         Assertions.assertTrue(result1);        //Testing the Searching & Inserting Node Sequence
     }
+
+    /**
+     * @description create Method for Testing the Linked List By searching the Element and Inserting the New Element in the List
+     *              and Delete the Element in the list and Check the Size of the List.
+     */
+    @Test
+    public void given3NumbersWhenSearchingTheElementAndDeleteThatElementShouldPassLinkedListResult () {
+        MyNode<Integer> myFirstNode = new MyNode<>(56);             //Creating object for Passing Nodes
+        MyNode<Integer> mySecondNode = new MyNode<>(30);
+        MyNode<Integer> myThirdNode = new MyNode<>(70);
+        MyNode<Integer> myFourthNode = new MyNode<>(40);
+        MyLinkedList mylinkedlist = new MyLinkedList();
+        mylinkedlist.add(myFirstNode);        //Adding FirstNode first to list
+        mylinkedlist.append(mySecondNode);    //Appending SecondNode to list
+        mylinkedlist.append(myThirdNode);     //Appending ThirdNode last to list
+        mylinkedlist.insert(mySecondNode,myFourthNode);  //Insert the FourthNode In Between The SecondNode and ThirdNode
+        mylinkedlist.printMyNode();        //Printing the List
+        System.out.println("After Deleting the Key 40, The LinkedList Sequence");
+        mylinkedlist.popNode(myFourthNode);   //Deleting the FourthNode
+        boolean result = mylinkedlist.head.equals(myFirstNode) &&
+                mylinkedlist.head.getNext().equals(mySecondNode) &&
+                mylinkedlist.tail.equals(myThirdNode);
+        Assertions.assertTrue(result);        //Testing the Searching & Inserting Node Sequence
+        mylinkedlist.printMyNode();           //Printing the List
+        int result1 = mylinkedlist.size();
+        Assertions.assertEquals(3,result1);   //Testing the Size of the LinkedList
+    }
 }
