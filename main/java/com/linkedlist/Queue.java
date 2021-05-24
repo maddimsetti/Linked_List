@@ -40,4 +40,12 @@ public class Queue {
     public INode peek() {
         return myLinkedList.head;
     }
+
+    /**
+     * @description create method for Deleting the Nodes from the list,
+     *               By Reusing LinkedList Printing MyNode method
+     */
+    public INode pop() {
+        return myLinkedList.pop();
+    }
 }
