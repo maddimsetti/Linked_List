@@ -25,5 +25,23 @@ public class StackTest {
         INode peek = stack.peek();
         Assertions.assertEquals(myThirdNode,peek);   //Testing the Peek Point
     }
+
+    /**
+     * @description create method to Delete a Element in a Stack of Sequence 56->30->70
+     *   Here Fist We Create Sequence And then Delete the Element in sequence Using LinkedList Pop Method
+     */
+    @Test
+    public void given3NumbersInStackWhenPoppedShouldMatchWithLastAddedNode() {
+        MyNode<Integer> myFirstNode = new MyNode(70);
+        MyNode<Integer> mySecondNode = new MyNode(30);
+        MyNode<Integer> myThirdNode = new MyNode(56);
+        Stack stack = new Stack();
+        stack.push(myFirstNode);     //Adding FirstNode to the list Using Stack
+        stack.push(mySecondNode);    ////Adding SecondNode to the list Using stack
+        stack.push(myThirdNode);     //Adding ThirdNode to the list Using stack
+        INode pop = stack.pop();
+        stack.printStack();          //Printing the Stack
+        Assertions.assertEquals(myThirdNode, pop);
+    }
 }
 
