@@ -1,18 +1,24 @@
 package com.linkedlist;
-
+/**
+ * @description create Class for Defining the MyMapNode to implements the INode
+ */
 public class MyMapNode<K, V> implements INode<K>  {
+    //variables
     K key;
     V value;
     MyMapNode<K,V> next;
 
+    /**
+     * @description create Getter and setter fot implementing
+     */
     public V getValue() {
-        return value;
+        return this.value;
     }
 
     public void setValue(V value) {
         this.value = value;
     }
-
+    //Override the myMapNode string
     public String toString() {
         StringBuffer myMapNodeString = new StringBuffer();
         myMapNodeString.append("MyMapNode {" + "K=").append(key)

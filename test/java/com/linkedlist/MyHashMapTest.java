@@ -2,10 +2,13 @@ package com.linkedlist;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import java.util.Locale;
-
+/**
+ * @description create Class for Defining the HashMap Test for a line
+ */
 public class MyHashMapTest {
+    /**
+     * @description create Method for testing to find the frequency of the sentence
+     */
     @Test
     public void given4Sentence_WhenWordsAreAddedToList_ShouldReturnWordFrequency() {
         String sentence = "To be or not to be";

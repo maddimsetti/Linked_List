@@ -148,9 +148,11 @@ public class MyLinkedList<K> {
         myNodes.append(tempNode.getKey());             //Appending the key to myNodes
         System.out.println(myNodes);
     }
-
+    /**
+     * @description create Method for Searching the Key
+     */
     public INode<K> search(K key) {
-        INode<K> tempNode = this.head;
+        INode<K> tempNode = head;
         while (tempNode != null && tempNode.getNext() != null) {
             if (tempNode.getKey().equals(key)) {
                 return tempNode;
@@ -159,7 +161,7 @@ public class MyLinkedList<K> {
         }
         return null;
     }
-
+    //Printing the Node
     public void printMyNodes() {
         System.out.println("MyNodes: " +head);
     }
