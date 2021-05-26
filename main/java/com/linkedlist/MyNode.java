@@ -28,10 +28,6 @@ public class MyNode<K> implements INode<K> {
     public void setKey(K key) {
         this.key = key;
     }
-    public void getKey(K key) {
-        this.key = null;
-        this.next = null;
-    }
 
     /**
      * @description Creating Getter and setter method from INode
@@ -44,4 +40,5 @@ public class MyNode<K> implements INode<K> {
     public void setNext(INode next) {
         this.next = (MyNode<K>)next;
     }
+
 }

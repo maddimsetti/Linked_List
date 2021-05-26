@@ -40,14 +40,16 @@ public class MyLinkedList<K> {
      * param: Here Head Created first and then append the tail to head and create the list
      *
      */
-    public void append (INode myNode) {
+    public void append (INode<K> myNode) {
         if (this.head == null) {
             this.head = myNode;
         }
-        if (this.tail != null) {
+        if (this.tail == null) {
+            this.tail = myNode;
+        } else {
             this.tail.setNext(myNode);
+            this.tail = myNode;
         }
-        this.tail = myNode;
     }
 
     /**
@@ -145,5 +147,25 @@ public class MyLinkedList<K> {
         }
         myNodes.append(tempNode.getKey());             //Appending the key to myNodes
         System.out.println(myNodes);
+    }
+
+    public INode<K> search(K key) {
+        INode<K> tempNode = this.head;
+        while (tempNode != null && tempNode.getNext() != null) {
+            if (tempNode.getKey().equals(key)) {
+                return tempNode;
+            }
+            tempNode = tempNode.getNext();
+        }
+        return null;
+    }
+
+    public void printMyNodes() {
+        System.out.println("MyNodes: " +head);
+    }
+
+    @Override
+    public String toString() {
+        return "MyLinkedListNodes{" +head+ '}';
     }
 }
